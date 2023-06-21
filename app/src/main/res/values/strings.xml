@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BrainTrain</string>
+    <string name="welcome_logo">welcome logo</string>
+    <string name="cont_descr_logo">Welcome logo</string>
+    <string name="tv_welcome">Salam, Dəniz Xanım</string>
+    <string name="welcome_text">Oyun qaydaları: qarşınızda üç rəqəm olacaq, ikisi aşağıda və biri yuxarıda, ikisində rəqəmlər olacaq. Alt iki rəqəmdən olan rəqəmlərin cəminin yuxarı rəqəmdəki rəqəmə bərabər olması lazımdır, bunun üçün itkin nömrəni daxil etməlisiniz. Misal: yuxarı dairədə nömrə 7, altdan birində sual işarəsi, digərində isə nömrə 4. Beləliklə, sual işarəsinin yerində 3 nömrəsi olmalıdır, çünki 3 + 4 = 7</string>
+    <string name="button_next">Davam et</string>
 </resources>
