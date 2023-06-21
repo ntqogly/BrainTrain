@@ -17,6 +17,7 @@ object GameRepositoryImpl : GameRepository {
         val sum = Random.nextInt(MIN_SUM_VALUE, maxSumValue + 1)
         val visibleNumber = Random.nextInt(MIN_ANSWER_VALUE, sum)
         val options = HashSet<Int>()
+
         val rightAnswers = sum - visibleNumber
         options.add(rightAnswers)
         val from = max(rightAnswers - countOfOptions, MIN_ANSWER_VALUE)
