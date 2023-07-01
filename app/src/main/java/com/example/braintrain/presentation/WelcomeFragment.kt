@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.braintrain.R
 import com.example.braintrain.databinding.FragmentWelcomeBinding
 import java.lang.RuntimeException
 
@@ -24,8 +25,14 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonNext.setOnClickListener {
-
+            launchChooseLevelFragment()
         }
+    }
+
+    private fun launchChooseLevelFragment() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container, ChooseLevelFragment.newInstance())
+            .addToBackStack(ChooseLevelFragment.NAME).commit()
     }
 
     override fun onDestroy() {
