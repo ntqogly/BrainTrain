@@ -1,6 +1,5 @@
 package com.example.braintrain.presentation
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,6 @@ import com.example.braintrain.databinding.FragmentGameBinding
 import com.example.braintrain.domain.entity.GameResult
 import com.example.braintrain.domain.entity.GameSettings
 import com.example.braintrain.domain.entity.Level
-import java.io.Serializable
 
 class GameFragment : Fragment() {
 
@@ -54,7 +52,9 @@ class GameFragment : Fragment() {
     }
 
     private fun parseArgs() {
-        level = requireArguments().getSerializable(KEY_LEVEL) as Level
+        requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
+            level = it
+        }
     }
 
     private fun launchGameFinishedFragment(gameResult: GameResult) {
@@ -63,14 +63,13 @@ class GameFragment : Fragment() {
         ).addToBackStack(null).commit()
     }
 
-
     companion object {
         private const val KEY_LEVEL = "level"
         const val NAME = "GameFragment"
         fun newInstance(level: Level): GameFragment {
             return GameFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(
+                    putParcelable(
                         KEY_LEVEL, level
                     )
                 }
