@@ -44,7 +44,6 @@ class ChooseLevelFragment : Fragment() {
             .addToBackStack(GameFragment.NAME).commit()
     }
 
-
     companion object {
         const val NAME = "ChooseLevelFragment"
         fun newInstance(): ChooseLevelFragment {
