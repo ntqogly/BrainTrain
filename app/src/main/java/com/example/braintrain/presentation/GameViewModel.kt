@@ -62,7 +62,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     private var countOfRightAnswers = 0
     private var countOfQuestions = 0
 
-    fun startGame() {
+    fun startGame(level: Level) {
         getGameSettings(level)
         startTimer()
         generateQuestion()
